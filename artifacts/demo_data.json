@@ -1,0 +1,189 @@
+[
+  {
+    "id": "scenario_us_multimatch",
+    "title": "US Enterprise Multi-Match & Typo Resilience",
+    "category": "Corporate Entity Linkage",
+    "description": "Source 1 reference record matches multiple noisy fragments across S2 and S3 with address component reordering, legal suffix stripping, and null values.",
+    "source1": {
+      "entity_id": "S1-343815751",
+      "business_name": "Dahlia Power Reliable Scientific LLC",
+      "business_address": "630 45th Terrace, Kansas City, MO",
+      "country": "US"
+    },
+    "candidates": [
+      {
+        "entity_id": "S2-479876582",
+        "source": "Source 2",
+        "business_name": "Dahlia Power Reliable Scientific",
+        "business_address": "45ND TERRACE, null, KANSAS CITY, MO",
+        "country": "US",
+        "is_true_match": true,
+        "notes": "Legal suffix 'LLC' dropped, address street uppercase with 'null' component"
+      },
+      {
+        "entity_id": "S2-790675320",
+        "source": "Source 2",
+        "business_name": "Dahlia Power Reliable",
+        "business_address": "KANSAS CITY, MO, 630 45ND TERRACE, null",
+        "country": "US",
+        "is_true_match": true,
+        "notes": "Word 'Scientific' omitted, address components reversed (City/State first)"
+      },
+      {
+        "entity_id": "S3-878454467",
+        "source": "Source 3",
+        "business_name": "Dahlia Power Reliable Scientific Inc",
+        "business_address": "630 45th Terrace, Kansas City, MO 64111",
+        "country": "US",
+        "is_true_match": true,
+        "notes": "Legal suffix swapped ('Inc' vs 'LLC'), 5-digit ZIP added"
+      },
+      {
+        "entity_id": "S2-990142104",
+        "source": "Source 2",
+        "business_name": "Reliable Scientific Instruments Corp",
+        "business_address": "630 Broadway St, Kansas City, MO",
+        "country": "US",
+        "is_true_match": false,
+        "notes": "Hard negative distractor: shares city and partial tokens 'Reliable Scientific' but different street"
+      }
+    ]
+  },
+  {
+    "id": "scenario_indic_cross_script",
+    "title": "Cross-Script Multilingual Resolution (English vs Indic/Devanagari)",
+    "category": "Cross-Script & Transliteration",
+    "description": "Source 1 written in Latin script while target records are written in Devanagari script. Tests multilingual sentence transformer embedding cosine alignment.",
+    "source1": {
+      "entity_id": "S1-755362802",
+      "business_name": "Supreme IT Solutions Private Limited",
+      "business_address": "Shivaji Nagar, Pune, Maharashtra 411005",
+      "country": "India"
+    },
+    "candidates": [
+      {
+        "entity_id": "S2-811492001",
+        "source": "Source 2",
+        "business_name": "सुप्रीम आईटी सॉल्यूशंस प्राइवेट लिमिटेड",
+        "business_address": "शिवाजी नगर, पुणे, महाराष्ट्र 411005",
+        "country": "India",
+        "is_true_match": true,
+        "notes": "Exact transliteration into Devanagari script (Hindi/Marathi) with matching PIN code"
+      },
+      {
+        "entity_id": "S3-441098231",
+        "source": "Source 3",
+        "business_name": "Supreme IT Solutions Pvt Ltd",
+        "business_address": "Near FC Road, Shivajinagar, Pune MH",
+        "country": "India",
+        "is_true_match": true,
+        "notes": "Landmark-based address variation ('Near FC Road') with abbreviated state ('MH')"
+      },
+      {
+        "entity_id": "S2-109283741",
+        "source": "Source 2",
+        "business_name": "Supreme Bakeries & Confectionery",
+        "business_address": "FC Road, Deccan, Pune, Maharashtra",
+        "country": "India",
+        "is_true_match": false,
+        "notes": "Distractor: same locality in Pune with common word 'Supreme' but different industry"
+      }
+    ]
+  },
+  {
+    "id": "scenario_colocation_trap",
+    "title": "Co-location Guardrail Benchmark (High Address Overlap, Disjoint Names)",
+    "category": "Co-location Guardrail",
+    "description": "Two completely separate commercial businesses operating in the same commercial complex/mall. Tests that high address similarity alone does NOT trigger false merge.",
+    "source1": {
+      "entity_id": "S1-501928410",
+      "business_name": "Apex Diagnostic & Pathology Center",
+      "business_address": "Tower B, Level 3, Cyber Gateway, Hitech City, Hyderabad, Telangana 500081",
+      "country": "India"
+    },
+    "candidates": [
+      {
+        "entity_id": "S2-390192841",
+        "source": "Source 2",
+        "business_name": "Apex Diagnostics Lab Pvt Ltd",
+        "business_address": "3rd Floor, Tower-B, Cyber Gateway, Madhapur, Hyderabad, TS",
+        "country": "India",
+        "is_true_match": true,
+        "notes": "True match with minor floor/state abbreviation variations"
+      },
+      {
+        "entity_id": "S3-881920394",
+        "source": "Source 3",
+        "business_name": "Blue Star Cloud Consultancy Services",
+        "business_address": "Tower B, Level 3, Cyber Gateway, Hitech City, Hyderabad, Telangana 500081",
+        "country": "India",
+        "is_true_match": false,
+        "notes": "CO-LOCATION TRAP: Identical commercial suite address, completely different business name! Must be blocked by Co-location Guardrail."
+      }
+    ]
+  },
+  {
+    "id": "scenario_france_unseen",
+    "title": "Zero-Shot Unseen Country: France (French Legal Forms & Addresses)",
+    "category": "Unseen Country Generalization",
+    "description": "France was never present in training data (train: US & India only). Tests open-vocabulary country handling and French legal suffixes (SASU, SARL, SA).",
+    "source1": {
+      "entity_id": "S1-913506265",
+      "business_name": "Thermal & Fils SASU",
+      "business_address": "20 Rue Parmentier, Dunkerque, Hauts-de-France",
+      "country": "France"
+    },
+    "candidates": [
+      {
+        "entity_id": "S2-550192837",
+        "source": "Source 2",
+        "business_name": "Thermal et Fils",
+        "business_address": "20 RUE PARMENTIER, DUNKERQUE, 59140",
+        "country": "France",
+        "is_true_match": true,
+        "notes": "French legal suffix 'SASU' stripped, '&' converted to 'et', postal code '59140' provided"
+      },
+      {
+        "entity_id": "S3-772910482",
+        "source": "Source 3",
+        "business_name": "Societe Thermique Dunkerquoise SARL",
+        "business_address": "20 Rue Parmentier, Dunkerque",
+        "country": "France",
+        "is_true_match": false,
+        "notes": "Co-located or neighboring engineering office sharing street address"
+      }
+    ]
+  },
+  {
+    "id": "scenario_hitl_borderline",
+    "title": "Borderline Ambiguity Case (Automated HITL Queue Trigger)",
+    "category": "Human-in-the-Loop Review",
+    "description": "Borderline match falling in the confidence interval [0.35, 0.45] due to partial address omission and trade name divergence, automatically queued for human auditor decision.",
+    "source1": {
+      "entity_id": "S1-229104819",
+      "business_name": "Cascade Mountain Outdoor Gear & Apparel LLC",
+      "business_address": "1420 NW Gilman Blvd, Issaquah, WA",
+      "country": "US"
+    },
+    "candidates": [
+      {
+        "entity_id": "S2-661902847",
+        "source": "Source 2",
+        "business_name": "Cascade Outfitters",
+        "business_address": "Gilman Blvd, Issaquah, Washington",
+        "country": "US",
+        "is_true_match": true,
+        "notes": "BORDERLINE CASE: Shortened trade name 'Cascade Outfitters', street number omitted. Probability ~0.39-0.42. Triggers Human-in-the-Loop review!"
+      },
+      {
+        "entity_id": "S3-199283019",
+        "source": "Source 3",
+        "business_name": "Cascade Mountain Gear Inc",
+        "business_address": "1420 Northwest Gilman Boulevard, Issaquah, WA 98027",
+        "country": "US",
+        "is_true_match": true,
+        "notes": "High confidence match with full street spelling and ZIP"
+      }
+    ]
+  }
+]

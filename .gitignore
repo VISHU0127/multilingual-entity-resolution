@@ -1,0 +1,39 @@
+# Python Bytecode & Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Streamlit Local Cache
+.streamlit/secrets.toml
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large / Regenerable Training Datasets
+dataset/
+*.tsv
+*.csv
+*.parquet
+*.sqlite
+*.npz
+output/
+scratch/
+
+# Allow essential pre-trained model weights & benchmark assets (<5MB)
+!artifacts/model.joblib
+!artifacts/calibrator.joblib
+!artifacts/decision_params.json
+!artifacts/demo_data.json
+!artifacts/faiss_index.bin
+!artifacts/faiss_meta.json
+!artifacts/feature_importances.json
+!artifacts/hitl_review_log.json

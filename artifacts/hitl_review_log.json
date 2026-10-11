@@ -1,0 +1,50 @@
+[
+  {
+    "review_id": "REV-2026-001",
+    "timestamp": "2026-10-12 02:30:15",
+    "s1_id": "S1-229104819",
+    "target_id": "S2-661902847",
+    "s1_name": "Cascade Mountain Outdoor Gear & Apparel LLC",
+    "s1_addr": "1420 NW Gilman Blvd, Issaquah, WA",
+    "t_name": "Cascade Outfitters",
+    "t_addr": "Gilman Blvd, Issaquah, Washington",
+    "country": "US",
+    "calibrated_prob": 0.412,
+    "status": "PENDING",
+    "reviewer_notes": "",
+    "reviewed_at": null,
+    "reason": "Truncated trade name with missing street number component"
+  },
+  {
+    "review_id": "REV-2026-002",
+    "timestamp": "2026-10-12 02:35:40",
+    "s1_id": "S1-889102451",
+    "target_id": "S3-551029384",
+    "s1_name": "Shree Ganesh Logistics & Freight Ltd",
+    "s1_addr": "Plot 45, MIDC Industrial Area, Andheri East, Mumbai 400093",
+    "t_name": "Ganesh Cargo Movers Pvt Ltd",
+    "t_addr": "45 MIDC Indl Estate, Andheri (E), Mumbai",
+    "country": "India",
+    "calibrated_prob": 0.384,
+    "status": "APPROVED",
+    "reviewer_notes": "Verified business branch rebranding through MCA registry record #40291.",
+    "reviewed_at": "2026-10-12 02:40:02",
+    "reason": "Corporate branch name alteration with matching MIDC plot location"
+  },
+  {
+    "review_id": "REV-2026-003",
+    "timestamp": "2026-10-12 02:42:11",
+    "s1_id": "S1-771928405",
+    "target_id": "S2-110928374",
+    "s1_name": "Royal Cafe & Bistro",
+    "s1_addr": "12 Connaught Place, Block B, New Delhi",
+    "t_name": "Royal Books & Stationary Emporium",
+    "t_addr": "12 B-Block, CP, New Delhi 110001",
+    "country": "India",
+    "calibrated_prob": 0.362,
+    "status": "REJECTED",
+    "reviewer_notes": "Distinct businesses operating adjacent units at 12 CP. Cafe vs Bookstore.",
+    "reviewed_at": "2026-10-12 02:45:18",
+    "reason": "Identical commercial address building with different business operations"
+  }
+]

@@ -1,0 +1,24 @@
+# Core Scientific & Data Processing
+pandas>=2.2.0
+numpy>=1.26.0
+scikit-learn>=1.5.0
+rapidfuzz>=3.10.0
+jellyfish>=1.1.0
+tqdm>=4.66.0
+
+# Machine Learning & Embeddings
+lightgbm>=4.5.0
+sentence-transformers>=3.0.0
+torch>=2.0.0
+joblib>=1.4.0
+
+# Vector Databases & Approximate Nearest Neighbor Search
+faiss-cpu>=1.9.0
+qdrant-client>=1.11.0
+
+# Generative AI & Explainability
+google-genai>=2.0.0
+plotly>=5.24.0
+
+# Interactive Dashboard UI
+streamlit>=1.40.0

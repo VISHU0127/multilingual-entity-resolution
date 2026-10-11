@@ -1,0 +1,164 @@
+{
+  "addr_token_overlap_ratio": {
+    "rank": 1,
+    "gain": 2507200.2858100533,
+    "gain_pct": 57.48,
+    "splits": 1793
+  },
+  "name_addr_sim_product": {
+    "rank": 2,
+    "gain": 677096.3585116267,
+    "gain_pct": 15.52,
+    "splits": 2474
+  },
+  "addr_is_empty_target": {
+    "rank": 3,
+    "gain": 244117.61400985718,
+    "gain_pct": 5.6,
+    "splits": 88
+  },
+  "name_embedding_cosine": {
+    "rank": 4,
+    "gain": 163373.94180691242,
+    "gain_pct": 3.75,
+    "splits": 4414
+  },
+  "blocking_score": {
+    "rank": 5,
+    "gain": 142740.1924865842,
+    "gain_pct": 3.27,
+    "splits": 2856
+  },
+  "addr_levenshtein_ratio": {
+    "rank": 6,
+    "gain": 112626.54606425762,
+    "gain_pct": 2.58,
+    "splits": 3863
+  },
+  "name_jaro_winkler": {
+    "rank": 7,
+    "gain": 79910.79012149572,
+    "gain_pct": 1.83,
+    "splits": 3023
+  },
+  "addr_token_jaccard": {
+    "rank": 8,
+    "gain": 74903.21190804243,
+    "gain_pct": 1.72,
+    "splits": 2685
+  },
+  "addr_street_num_match": {
+    "rank": 9,
+    "gain": 52657.14605027437,
+    "gain_pct": 1.21,
+    "splits": 890
+  },
+  "name_char_3gram_jaccard": {
+    "rank": 10,
+    "gain": 52639.102286458015,
+    "gain_pct": 1.21,
+    "splits": 2066
+  },
+  "addr_embedding_cosine": {
+    "rank": 11,
+    "gain": 45203.24710524082,
+    "gain_pct": 1.04,
+    "splits": 3364
+  },
+  "name_levenshtein_ratio": {
+    "rank": 12,
+    "gain": 38660.21250039339,
+    "gain_pct": 0.89,
+    "splits": 3011
+  },
+  "blocking_rank": {
+    "rank": 13,
+    "gain": 31216.226940900087,
+    "gain_pct": 0.72,
+    "splits": 1126
+  },
+  "suffix_presence_target": {
+    "rank": 14,
+    "gain": 27257.009974062443,
+    "gain_pct": 0.62,
+    "splits": 647
+  },
+  "suffix_normalized_equality": {
+    "rank": 15,
+    "gain": 26789.63512080908,
+    "gain_pct": 0.61,
+    "splits": 801
+  },
+  "name_len_diff": {
+    "rank": 16,
+    "gain": 25741.39124059677,
+    "gain_pct": 0.59,
+    "splits": 2465
+  },
+  "name_token_jaccard": {
+    "rank": 17,
+    "gain": 24975.277031600475,
+    "gain_pct": 0.57,
+    "splits": 998
+  },
+  "name_token_overlap_ratio": {
+    "rank": 18,
+    "gain": 17759.275802910328,
+    "gain_pct": 0.41,
+    "splits": 527
+  },
+  "target_is_s2": {
+    "rank": 19,
+    "gain": 4758.770647346973,
+    "gain_pct": 0.11,
+    "splits": 518
+  },
+  "suffix_presence_s1": {
+    "rank": 20,
+    "gain": 3765.2447652220726,
+    "gain_pct": 0.09,
+    "splits": 484
+  },
+  "name_acronym_match": {
+    "rank": 21,
+    "gain": 3505.8962967395782,
+    "gain_pct": 0.08,
+    "splits": 312
+  },
+  "name_first_token_soundex_match": {
+    "rank": 22,
+    "gain": 1480.0693073272705,
+    "gain_pct": 0.03,
+    "splits": 139
+  },
+  "target_is_s3": {
+    "rank": 23,
+    "gain": 1325.6095994114876,
+    "gain_pct": 0.03,
+    "splits": 196
+  },
+  "name_first_token_metaphone_match": {
+    "rank": 24,
+    "gain": 1115.2066328525543,
+    "gain_pct": 0.03,
+    "splits": 112
+  },
+  "addr_postal_code_match": {
+    "rank": 25,
+    "gain": 1051.1734732985497,
+    "gain_pct": 0.02,
+    "splits": 146
+  },
+  "name_exact_match": {
+    "rank": 26,
+    "gain": 0.0,
+    "gain_pct": 0.0,
+    "splits": 0
+  },
+  "country_exact_match": {
+    "rank": 27,
+    "gain": 0.0,
+    "gain_pct": 0.0,
+    "splits": 0
+  }
+}
