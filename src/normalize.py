@@ -335,10 +335,18 @@ def _apply_legal_suffix_removal(text: str) -> str:
 def extract_legal_suffixes(name: str) -> list:
     """Return a sorted list of canonical legal suffixes found in a name."""
     found = set()
+    canonical_in_order = []
     for m in _LEGAL_SUFFIX_PATTERN.finditer(name.lower()):
         raw = m.group().strip('.')
         canonical = LEGAL_SUFFIX_MAP.get(raw.lower(), raw.lower())
         found.add(canonical)
+        canonical_in_order.append(canonical)
+
+    # Preserve common composite legal form used in South Asian company names.
+    for prev, curr in zip(canonical_in_order, canonical_in_order[1:]):
+        if prev == "pvt" and curr == "ltd":
+            found.add("pvt_ltd")
+
     return sorted(found)
 
 
