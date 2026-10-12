@@ -47,6 +47,12 @@ TreeSHAP explanation and audit memorandum
 
 The dashboard uses the same runtime engine for interactive scoring. Persisted artifacts make the demo reproducible without retraining on every startup.
 
+The repository also includes a visual walkthrough in the README:
+
+- [Live entity lookup](screenshots/live-entity-lookup.png)
+- [TreeSHAP explanation](screenshots/treeshap-explanation.png)
+- [Regulatory audit](screenshots/regulatory-audit.png)
+
 ## 3. Stage 1 — normalization
 
 Normalization is deliberately conservative: it removes formatting noise while preserving evidence needed by later gates.

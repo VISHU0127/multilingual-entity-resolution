@@ -20,6 +20,28 @@ Given a reference business record and one or more candidate records, the engine:
 
 The included Streamlit dashboard provides an interactive way to inspect these decisions.
 
+## Dashboard screenshots
+
+The included screenshots show the main user-facing workflow:
+
+### Live entity lookup and candidate resolution
+
+The lookup view evaluates multiple noisy records against one reference entity and displays calibrated probabilities, source metadata, similarity metrics, and match status.
+
+![Live entity lookup and resolved candidates](docs/screenshots/live-entity-lookup.png)
+
+### TreeSHAP match explanation
+
+The explanation view combines the confidence gauge, decision summary, pair-gate result, and feature-contribution waterfall.
+
+![TreeSHAP match explanation](docs/screenshots/treeshap-explanation.png)
+
+### Regulatory audit memorandum
+
+The audit view presents a grounded merge verdict, evidence breakdown, compliance risk assessment, and recommended action.
+
+![Regulatory audit memorandum](docs/screenshots/regulatory-audit.png)
+
 ## Key capabilities
 
 - **Multilingual normalization**: Unicode decomposition, punctuation cleanup, legal-suffix canonicalization, country normalization, and address extraction.
