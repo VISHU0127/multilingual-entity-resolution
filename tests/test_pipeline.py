@@ -39,6 +39,7 @@ class TestEntityResolutionPipeline(unittest.TestCase):
         
         suffixes = extract_legal_suffixes("Acme Industries Private Limited")
         self.assertIn("pvt_ltd", suffixes)
+        self.assertIn("pvt_ltd", extract_legal_suffixes("Acme Industries Pvt. Ltd."))
 
         street_num = extract_street_number("630 45th Terrace, Kansas City, MO")
         self.assertEqual(street_num, "630")

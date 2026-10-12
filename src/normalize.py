@@ -335,10 +335,15 @@ def _apply_legal_suffix_removal(text: str) -> str:
 def extract_legal_suffixes(name: str) -> list:
     """Return a sorted list of canonical legal suffixes found in a name."""
     found = set()
+    canonical_tokens = []
     for m in _LEGAL_SUFFIX_PATTERN.finditer(name.lower()):
         raw = m.group().strip('.')
         canonical = LEGAL_SUFFIX_MAP.get(raw.lower(), raw.lower())
         found.add(canonical)
+        canonical_tokens.append(canonical)
+    for idx in range(len(canonical_tokens) - 1):
+        if canonical_tokens[idx] == "pvt" and canonical_tokens[idx + 1] == "ltd":
+            found.add("pvt_ltd")
     return sorted(found)
 
 
